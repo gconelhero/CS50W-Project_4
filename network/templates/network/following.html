@@ -1,0 +1,42 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+  
+  <div class="feed-container">
+    <h2>Following Posts</h2>
+    <div id="all-posts" class="all-post-container">
+      {% for post in posts %}
+      <div class="all-posts card">
+        <div class="post-header">
+          <a class="post-header" id="post-usessrname-link" href="{% url 'profile' username=post.user %}"><h5 class="post-header" id="post-username">{{ post.user }}</h5></a>
+          <p class="post-header" id="edit">{% if request.user.username == post.user %}<input class="btn-primary" onclick="edit('{{ post.id }}')" id="edit-button" type="button" value="Edit">{% endif %}</p>
+        </div>
+        <p class="post-content" id="post-content-{{ post.id }}">{{ post.content }}</p><br>
+          <p id="post-timestamp">{{ post.timestamp }}</p>
+          <div class="like">
+            <p class="like" id="like-{{ post.id }}">{{ post.like | length }}</p>
+            <input type="image" onclick="like('{{ post.id }}')" 
+            class="like" src="/network/media/icons/heart-solid.svg">
+            <p class="like" id="like-{{ post.id }}-like">{% if request.user.username in post.like %}Unlike{% else %}Like{% endif %}</p>
+          </div>
+      </div>
+      {% endfor %}
+      <script src="{% static 'network/following.js' %}"></script>
+    </div>
+    {% if posts %}
+      <div class="page-links">        
+        <ul class="pagination">
+        {% if page.has_previous %}
+          <li class="page-item"><a class="page-link" href="{% url 'following' %}?pagina={{ page.previous_page_number }}">Previous</a></li>
+        {% endif %}
+            {% for page in page_range %}<li class="page-item"><a class="page-link" href="{% url 'following' %}?pagina={{ page }}">{{ page }}</a></li>{% endfor %}
+        {% if page.has_next %}
+          <li class="page-item"><a class="page-link" href="{% url 'following' %}?pagina={{ page.next_page_number }}">Next</a></li>
+        {% endif %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

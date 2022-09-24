@@ -1,0 +1,150 @@
+.body {
+  background-color: rgb(241, 241, 241);
+  color-scheme: white;
+}
+
+a{
+  color: #000000;
+}
+
+a:hover {
+  color: #000000;
+}
+
+.feed-container{
+  margin: auto;
+  width: 40%;
+  max-width: 40%;
+  padding: 10px;
+  background-color: rgb(213, 213, 213);
+}
+
+.new-post-form {
+  border: 1px solid rgb(173, 173, 173);
+  align-items: center;
+  text-align: center;
+}
+
+.all-post-container {
+  
+  margin: 10px;
+}
+
+.card {
+ padding: inherit;
+}
+
+.new-post-form {
+  margin: auto;
+  width: 95%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+textarea#new-post {
+  width: 100%;
+  max-width: 100%;
+  height: 100px;
+}
+
+input#content {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+
+p.post-content {
+  margin-right: 70px;
+  margin-left: 10px;
+}
+
+#post-username-link {
+  float: left;
+}
+
+.post-edit{
+  display: grid;
+  align-items: flex-start;
+  float: left;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.btn-primary:hover{
+  color: #000000;
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+#edit {
+  text-align: center;
+  display: inline;
+  position: absolute;
+  width: 70px;
+  max-width: auto;
+  right: 20px;
+  top: 1px;
+  border: 0px 0px;
+}
+
+div.like {
+  text-align: center;
+  display: inline;
+  position: absolute;
+  width: 70px;
+  max-width: auto;
+  right: 20px;
+  bottom: 1px;
+  
+}
+
+p.like {
+  margin-bottom: 0px;
+}
+
+input.like {
+  width: 30px; 
+}
+
+p#post-timestamp{
+  font-size: small;
+  margin: 0px;
+}
+
+.profile {
+  display: inline;
+}
+
+div.follow {
+  height: 40px;
+}
+
+p.followers {
+  display: inline-flex;
+  margin-left: 10px;
+  margin-top: 16px
+}
+
+button#follow {
+  float: right;
+  background-color: black;
+  color: aliceblue;
+  margin-right: 10px;
+}
+
+.page-links {
+  text-align: center;
+}
+
+.page-number {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+ul.pagination {
+  display: -webkit-inline-box;
+}
